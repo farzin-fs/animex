@@ -3,7 +3,7 @@ name: Distribution
 on:
   push:
     branches:
-      - main
+      - *
 
 jobs:
   distribution:
