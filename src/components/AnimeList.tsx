@@ -2,6 +2,7 @@ import React from 'react';
 import {
   ActivityIndicator,
   FlatList,
+  Platform,
   StyleSheet,
   useWindowDimensions,
 } from 'react-native';
@@ -35,7 +36,11 @@ const AnimeList: React.FC<TProps> = ({
         <AnimeCard data={item} onPress={() => onPress?.(item)} />
       )}
       ItemSeparatorComponent={() => <Divider size={'90%'} />}
-      style={{width: window.width, height: window.height}}
+      style={
+        Platform.OS === 'web'
+          ? {}
+          : {width: window.width, height: window.height}
+      }
       contentContainerStyle={styles.container}
       ListEmptyComponent={() => (
         <EmptyState title={'Empty'} message={'There is nothing in this list'} />

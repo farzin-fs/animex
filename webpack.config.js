@@ -6,9 +6,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const appDirectory = path.resolve(__dirname);
 const {presets} = require(`${appDirectory}/babel.config.js`);
 
-const compileNodeModules = ['react-native-gesture-handler'].map(moduleName =>
-  path.resolve(appDirectory, `node_modules/${moduleName}`),
-);
+const compileNodeModules = [
+  'react-native-gesture-handler',
+  'react-native-vector-icons',
+].map(moduleName => path.resolve(appDirectory, `node_modules/${moduleName}`));
 
 const babelLoaderConfiguration = {
   test: /\.js$|tsx?$/,
@@ -38,10 +39,12 @@ const imageLoaderConfiguration = {
   },
 };
 
-const fontLoaderConfiguration = {
+const ttfLoaderConfiguration = {
   test: /\.ttf$/,
   loader: 'url-loader',
-  include: path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
+  include: [
+    path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
+  ],
 };
 
 module.exports = {
@@ -63,7 +66,7 @@ module.exports = {
     rules: [
       babelLoaderConfiguration,
       imageLoaderConfiguration,
-      fontLoaderConfiguration,
+      ttfLoaderConfiguration,
     ],
   },
   plugins: [
