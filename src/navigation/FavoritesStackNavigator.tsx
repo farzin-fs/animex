@@ -5,6 +5,7 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import React from 'react';
+import {Platform} from 'react-native';
 import {IconButton} from '../components';
 import {DetailsScreen, FavoritesScreen} from '../screens';
 import {TRootNavigatorParams} from '../types';
@@ -26,7 +27,7 @@ const screenOptions = ({
 }) => {
   const options: NativeStackNavigationOptions = {
     headerLeft:
-      route.name === 'favorites_list'
+      route.name === 'favorites_list' && Platform.OS !== 'web'
         ? () => (
             <IconButton name="menu-outline" onPress={navigation.toggleDrawer} />
           )

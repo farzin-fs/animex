@@ -7,13 +7,14 @@ const appDirectory = path.resolve(__dirname);
 const {presets} = require(`${appDirectory}/babel.config.js`);
 
 const compileNodeModules = [
-  // 'react-native-gesture-handler',
+  'react-native-gesture-handler',
+  'react-native-vector-icons',
 ].map(moduleName => path.resolve(appDirectory, `node_modules/${moduleName}`));
 
 const babelLoaderConfiguration = {
   test: /\.js$|tsx?$/,
   include: [
-    path.resolve(__dirname, 'index.js'),
+    path.resolve(__dirname, 'index.web.js'),
     path.resolve(__dirname, 'App.tsx'),
     path.resolve(__dirname, 'src'),
     ...compileNodeModules,
@@ -38,15 +39,17 @@ const imageLoaderConfiguration = {
   },
 };
 
-const fontLoaderConfiguration = {
+const ttfLoaderConfiguration = {
   test: /\.ttf$/,
   loader: 'url-loader',
-  include: path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
+  include: [
+    path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
+  ],
 };
 
 module.exports = {
   entry: {
-    app: path.join(__dirname, 'index.js'),
+    app: path.join(__dirname, 'index.web.js'),
   },
   output: {
     path: path.resolve(appDirectory, 'dist'),
@@ -56,14 +59,14 @@ module.exports = {
   resolve: {
     extensions: ['.web.tsx', '.web.ts', '.tsx', '.ts', '.web.js', '.js'],
     alias: {
-      'react-native$': 'react-native-web',
+      'react-native$': require.resolve('react-native-web'),
     },
   },
   module: {
     rules: [
       babelLoaderConfiguration,
       imageLoaderConfiguration,
-      fontLoaderConfiguration,
+      ttfLoaderConfiguration,
     ],
   },
   plugins: [
@@ -71,9 +74,11 @@ module.exports = {
       template: path.join(__dirname, 'web/index.html'),
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.EnvironmentPlugin({JEST_WORKER_ID: null}),
     new webpack.DefinePlugin({
       // See: https://github.com/necolas/react-native-web/issues/349
       __DEV__: JSON.stringify(true),
+      process: {env: {}},
     }),
   ],
 };
