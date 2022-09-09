@@ -21,5 +21,5 @@ yarn
 ```sh
 yarn android
 yarn ios
-yarn web # not working yet
+yarn web
 ```
