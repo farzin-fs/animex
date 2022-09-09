@@ -6,14 +6,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const appDirectory = path.resolve(__dirname);
 const {presets} = require(`${appDirectory}/babel.config.js`);
 
-const compileNodeModules = [
-  // 'react-native-gesture-handler',
-].map(moduleName => path.resolve(appDirectory, `node_modules/${moduleName}`));
+const compileNodeModules = ['react-native-gesture-handler'].map(moduleName =>
+  path.resolve(appDirectory, `node_modules/${moduleName}`),
+);
 
 const babelLoaderConfiguration = {
   test: /\.js$|tsx?$/,
   include: [
-    path.resolve(__dirname, 'index.js'),
+    path.resolve(__dirname, 'index.web.js'),
     path.resolve(__dirname, 'App.tsx'),
     path.resolve(__dirname, 'src'),
     ...compileNodeModules,
@@ -46,7 +46,7 @@ const fontLoaderConfiguration = {
 
 module.exports = {
   entry: {
-    app: path.join(__dirname, 'index.js'),
+    app: path.join(__dirname, 'index.web.js'),
   },
   output: {
     path: path.resolve(appDirectory, 'dist'),
@@ -56,7 +56,7 @@ module.exports = {
   resolve: {
     extensions: ['.web.tsx', '.web.ts', '.tsx', '.ts', '.web.js', '.js'],
     alias: {
-      'react-native$': 'react-native-web',
+      'react-native$': require.resolve('react-native-web'),
     },
   },
   module: {
@@ -71,9 +71,11 @@ module.exports = {
       template: path.join(__dirname, 'web/index.html'),
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.EnvironmentPlugin({JEST_WORKER_ID: null}),
     new webpack.DefinePlugin({
       // See: https://github.com/necolas/react-native-web/issues/349
       __DEV__: JSON.stringify(true),
+      process: {env: {}},
     }),
   ],
 };

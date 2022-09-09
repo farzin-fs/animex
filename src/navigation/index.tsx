@@ -7,7 +7,7 @@ import React from 'react';
 import {useDarkMode} from '../hooks';
 import DrawerNavigator from './DrawerNavigator';
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   const isDarkMode = useDarkMode();
 
   return (
