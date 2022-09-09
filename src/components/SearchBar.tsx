@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import {
   NativeSyntheticEvent,
+  TextInput,
   TextInputSubmitEditingEventData,
+  View,
 } from 'react-native';
-import styled from 'styled-components/native';
+import styled from '../themes';
 import IconButton from './IconButton';
 import Spacer from './Spacer';
 
-const Container = styled.View`
+const Container = styled(View)`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.primary};
   padding: 8px 16px;
@@ -16,7 +18,7 @@ const Container = styled.View`
   align-items: center;
 `;
 
-const Input = styled.TextInput`
+const Input = styled(TextInput)`
   flex: 1;
   height: 32px;
   background-color: ${({ theme }) => theme.colors.secondary};

@@ -1,20 +1,21 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import { Image, TouchableOpacity, View } from 'react-native';
+import styled from '../themes';
 import { TAnime } from '../types';
 import TextPrimary from './TextPrimary';
 import TextSecondary from './TextSecondary';
 
-const Container = styled.TouchableOpacity`
+const Container = styled(TouchableOpacity)`
   flex-direction: row;
   padding: 12px;
 `;
 
-const DetailsContainer = styled.View`
+const DetailsContainer = styled(View)`
   flex: 1;
   padding-left: 12px;
 `;
 
-const Cover = styled.Image`
+const Cover = styled(Image)`
   width: 75px;
   height: 115px;
   background-color: ${({ theme }) => theme.colors.textSecondary};

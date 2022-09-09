@@ -4,13 +4,14 @@ import {
   NavigationContainer,
 } from '@react-navigation/native';
 import React, { useState } from 'react';
-import styled from 'styled-components/native';
+import { View } from 'react-native';
 import { Divider, SideNav } from '../components';
 import { useDarkMode } from '../hooks';
+import styled from '../themes';
 import FavoritesStackNavigator from './FavoritesStackNavigator';
 import ListingStackNavigator from './ListingStackNavigator';
 
-const Container = styled.View`
+const Container = styled(View)`
   flex: 1;
   flex-direction: row;
 `;

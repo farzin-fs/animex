@@ -1,18 +1,19 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import { TouchableOpacity, View } from 'react-native';
+import styled from '../themes';
 import IconButton from './IconButton';
 import Spacer from './Spacer';
 import TextPrimary from './TextPrimary';
 
-const Container = styled.View`
+const Container = styled(View)`
   flex: 0.5;
-  min-width: 300px;
+  min-width: 200px;
   max-width: 400px;
   padding: 16px;
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
-const Button = styled.TouchableOpacity<{ active: boolean }>`
+const Button = styled(TouchableOpacity)<{ active: boolean }>`
   flex-direction: row;
   background-color: ${({ theme, active }) =>
     active ? theme.colors.secondary : theme.colors.primary};

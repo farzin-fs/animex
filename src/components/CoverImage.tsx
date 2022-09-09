@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import { Image } from 'react-native';
+import styled from '../themes';
 
-const Cover = styled.Image`
+const Cover = styled(Image)`
   width: 100%;
   height: 600px;
   background-color: ${({ theme }) => theme.colors.textSecondary};

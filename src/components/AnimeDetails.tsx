@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import { View } from 'react-native';
+import styled from '../themes';
 import { TAnime } from '../types';
 import CoverImage from './CoverImage';
 import Divider from './Divider';
@@ -7,7 +8,7 @@ import Spacer from './Spacer';
 import TextPrimary from './TextPrimary';
 import TextSecondary from './TextSecondary';
 
-const Container = styled.View`
+const Container = styled(View)`
   padding: 12px;
 `;
 

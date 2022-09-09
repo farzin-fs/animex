@@ -6,7 +6,7 @@ import Navigation from './navigation';
 import { StoreProvider } from './stores';
 import { darkTheme, lightTheme } from './themes';
 
-const App = () => {
+const App: React.FC = () => {
   const isDarkMode = useDarkMode();
 
   return (
