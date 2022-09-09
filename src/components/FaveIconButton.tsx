@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
-import { useStore } from '../hooks';
+import { useIsFavorite, useToggleFavorite } from '../hooks';
 import styled from '../themes';
 import { TAnime } from '../types';
 import IconButton from './IconButton';
@@ -14,13 +14,14 @@ type TProps = {
 };
 
 const FaveIconButton: React.FC<TProps> = ({ data }) => {
-  const store = useStore();
+  const toggle = useToggleFavorite(data);
+  const isFavorite = useIsFavorite(data.mal_id);
 
   return (
     <Container>
       <IconButton
-        name={store.isFavorite(data.mal_id) ? 'heart' : 'heart-outline'}
-        onPress={() => store.toggle(data)}
+        name={isFavorite ? 'heart' : 'heart-outline'}
+        onPress={toggle}
         color="red"
       />
     </Container>

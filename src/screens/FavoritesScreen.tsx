@@ -1,16 +1,16 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { AnimeList, Screen } from '../components';
-import { useStore } from '../hooks';
+import { useFavorites } from '../hooks';
 
 const FavoritesScreen: React.FC = () => {
-  const store = useStore();
   const navigation = useNavigation();
+  const data = useFavorites();
 
   return (
     <Screen>
       <AnimeList
-        data={store.favorites}
+        data={data}
         onPress={anime =>
           navigation.navigate('favorites_details', { id: anime.mal_id })
         }
