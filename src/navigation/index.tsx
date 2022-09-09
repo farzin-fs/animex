@@ -4,7 +4,7 @@ import {
   NavigationContainer,
 } from '@react-navigation/native';
 import React from 'react';
-import {useDarkMode} from '../hooks';
+import { useDarkMode } from '../hooks';
 import DrawerNavigator from './DrawerNavigator';
 
 const Navigation: React.FC = () => {

@@ -1,12 +1,12 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
-import {ThemeProvider} from 'styled-components/native';
-import {useDarkMode} from './hooks';
+import { StatusBar } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
+import { useDarkMode } from './hooks';
 import Navigation from './navigation';
-import {StoreProvider} from './stores';
-import {darkTheme, lightTheme} from './themes';
+import { StoreProvider } from './stores';
+import { darkTheme, lightTheme } from './themes';
 
-const App = () => {
+const App: React.FC = () => {
   const isDarkMode = useDarkMode();
 
   return (

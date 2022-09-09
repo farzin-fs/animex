@@ -1,6 +1,6 @@
 import React from 'react';
-import {ColorValue, TouchableOpacity} from 'react-native';
-import {useTheme} from 'styled-components/native';
+import { ColorValue, TouchableOpacity } from 'react-native';
+import { useTheme } from 'styled-components/native';
 import Icon from './Icon';
 
 type TProps = {
@@ -9,8 +9,8 @@ type TProps = {
   onPress?: () => void;
 };
 
-const IconButton: React.FC<TProps> = ({name, color, onPress}) => {
-  const {colors} = useTheme();
+const IconButton: React.FC<TProps> = ({ name, color, onPress }) => {
+  const { colors } = useTheme();
 
   return (
     <TouchableOpacity onPress={onPress} disabled={onPress === undefined}>

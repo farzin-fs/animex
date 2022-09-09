@@ -1,11 +1,12 @@
-import styled from 'styled-components/native';
+import { View } from 'react-native';
+import styled from '../themes';
 
-type TProps = {
+type TProps = React.PropsWithChildren<{
   primary?: boolean;
-};
+}>;
 
-const Screen = styled.View<TProps>`
-  background-color: ${({theme, primary}) =>
+const Screen = styled(View)<TProps>`
+  background-color: ${({ theme, primary }) =>
     primary ? theme.colors.primary : theme.colors.secondary};
   flex: 1;
 `;

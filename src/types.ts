@@ -1,10 +1,10 @@
-import type {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
-import type {CompositeScreenProps} from '@react-navigation/native';
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {TDrawerNavigatorParams} from './navigation/DrawerNavigator';
-import {TFavoritesStackNavigatorParams} from './navigation/FavoritesStackNavigator';
-import {TListingStackNavigatorParams} from './navigation/ListingStackNavigator';
-import {TTabNavigatorParams} from './navigation/TabNavigator';
+import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import type { CompositeScreenProps } from '@react-navigation/native';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { TDrawerNavigatorParams } from './navigation/DrawerNavigator';
+import { TFavoritesStackNavigatorParams } from './navigation/FavoritesStackNavigator';
+import { TListingStackNavigatorParams } from './navigation/ListingStackNavigator';
+import { TTabNavigatorParams } from './navigation/TabNavigator';
 
 export type TRootNavigatorParams = TDrawerNavigatorParams &
   TListingStackNavigatorParams &

@@ -1,6 +1,6 @@
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
-import {IconButton} from '../components';
+import { IconButton } from '../components';
 import FavoritesStackNavigator from './FavoritesStackNavigator';
 import ListingStackNavigator from './ListingStackNavigator';
 
@@ -14,7 +14,7 @@ const Drawer = createDrawerNavigator<TDrawerNavigatorParams>();
 const DrawerNavigator: React.FC = () => (
   <Drawer.Navigator
     initialRouteName="drawer_listing"
-    screenOptions={{headerShown: false}}>
+    screenOptions={{ headerShown: false }}>
     <Drawer.Screen
       name="drawer_listing"
       component={ListingStackNavigator}

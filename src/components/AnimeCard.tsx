@@ -1,33 +1,37 @@
 import React from 'react';
-import styled from 'styled-components/native';
-import {TAnime} from '../types';
+import { Image, TouchableOpacity, View } from 'react-native';
+import styled from '../themes';
+import { TAnime } from '../types';
 import TextPrimary from './TextPrimary';
 import TextSecondary from './TextSecondary';
 
-const Container = styled.TouchableOpacity`
+const Container = styled(TouchableOpacity)<Pick<TProps, 'flex'>>`
+  ${({ flex }) => (flex === 1 ? 'flex: 1' : '')};
+  width: 100%;
   flex-direction: row;
   padding: 12px;
 `;
 
-const DetailsContainer = styled.View`
+const DetailsContainer = styled(View)`
   flex: 1;
   padding-left: 12px;
 `;
 
-const Cover = styled.Image`
+const Cover = styled(Image)`
   width: 75px;
   height: 115px;
-  background-color: ${({theme}) => theme.colors.textSecondary};
+  background-color: ${({ theme }) => theme.colors.textSecondary};
 `;
 
 type TProps = {
   data: TAnime;
   onPress: () => void;
+  flex?: number;
 };
 
-const AnimeCard: React.FC<TProps> = ({data, onPress}) => (
-  <Container onPress={onPress}>
-    <Cover source={{uri: data.images.jpg.image_url}} />
+const AnimeCard: React.FC<TProps> = ({ data, onPress, flex }) => (
+  <Container onPress={onPress} flex={flex}>
+    <Cover source={{ uri: data.images.jpg.image_url }} />
     <DetailsContainer>
       <TextPrimary>{data.title}</TextPrimary>
       {data.rating && <TextSecondary>{data.rating}</TextSecondary>}

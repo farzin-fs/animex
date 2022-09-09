@@ -1,5 +1,10 @@
-export {default as useDarkMode} from './useDarkMode';
-export {default as useFetch} from './useFetch';
-export {default as useFetchAnimeByID} from './useFetchAnimeByID';
-export {default as useFetchAnimeList} from './useFetchAnimeList';
-export {default as useStore} from './useStore';
+export { default as useDarkMode } from './useDarkMode';
+export { default as useDebounce } from './useDebounce';
+export { default as useDispatch } from './useDispatch';
+export { default as useFavorites } from './useFavorites';
+export { default as useFetch } from './useFetch';
+export { default as useFetchAnimeByID } from './useFetchAnimeByID';
+export { default as useFetchAnimeList } from './useFetchAnimeList';
+export { default as useIsFavorite } from './useIsFavorite';
+export { default as useSelector } from './useSelector';
+export { default as useToggleFavorite } from './useToggleFavorite';

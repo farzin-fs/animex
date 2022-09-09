@@ -1,4 +1,4 @@
-import {TAnime, TResponse} from '../types';
+import { TAnime, TResponse } from '../types';
 import useFetch from './useFetch';
 
 const useFetchAnimeList = (status: string, page: number, query?: string) => {
