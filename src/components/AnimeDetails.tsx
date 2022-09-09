@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import {TAnime} from '../types';
+import { TAnime } from '../types';
 import CoverImage from './CoverImage';
 import Divider from './Divider';
 import Spacer from './Spacer';
@@ -15,7 +15,7 @@ type TProps = {
   data: TAnime;
 };
 
-const AnimeDetails: React.FC<TProps> = ({data}) => (
+const AnimeDetails: React.FC<TProps> = ({ data }) => (
   <>
     <CoverImage uri={data.images.jpg.large_image_url} />
     <Container>

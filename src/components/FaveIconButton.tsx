@@ -1,13 +1,13 @@
 import React from 'react';
-import {useStore} from '../hooks';
-import {TAnime} from '../types';
+import { useStore } from '../hooks';
+import { TAnime } from '../types';
 import IconButton from './IconButton';
 
 type TProps = {
   data: TAnime;
 };
 
-const FaveIconButton: React.FC<TProps> = ({data}) => {
+const FaveIconButton: React.FC<TProps> = ({ data }) => {
   const store = useStore();
 
   return (

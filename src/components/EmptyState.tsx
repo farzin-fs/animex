@@ -1,6 +1,6 @@
 import React from 'react';
-import {Button} from 'react-native';
-import {Center, Spacer, TextPrimary, TextSecondary} from '.';
+import { Button } from 'react-native';
+import { Center, Spacer, TextPrimary, TextSecondary } from '.';
 
 type TProps = {
   title?: string;
@@ -8,7 +8,7 @@ type TProps = {
   onRetry?: () => void;
 };
 
-const EmptyState: React.FC<TProps> = ({title, message, onRetry}) => {
+const EmptyState: React.FC<TProps> = ({ title, message, onRetry }) => {
   return (
     <Center>
       {title && <TextPrimary>{title?.toUpperCase()}</TextPrimary>}

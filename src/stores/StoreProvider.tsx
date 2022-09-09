@@ -1,10 +1,10 @@
-import React, {useReducer} from 'react';
-import {TAnime} from '../types';
-import storeReducer, {TState} from './storeReducer';
+import React, { useReducer } from 'react';
+import { TAnime } from '../types';
+import storeReducer, { TState } from './storeReducer';
 
 export const StoreContext = React.createContext<TState | undefined>(undefined);
 
-const StoreProvider: React.FC<React.PropsWithChildren> = ({children}) => {
+const StoreProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [state, dispatch] = useReducer(storeReducer, {
     favorites: [],
     toggle: () => {},
@@ -24,7 +24,7 @@ const StoreProvider: React.FC<React.PropsWithChildren> = ({children}) => {
   };
 
   return (
-    <StoreContext.Provider value={{...state, toggle, isFavorite}}>
+    <StoreContext.Provider value={{ ...state, toggle, isFavorite }}>
       {children}
     </StoreContext.Provider>
   );

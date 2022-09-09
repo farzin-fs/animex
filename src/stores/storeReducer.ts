@@ -1,4 +1,4 @@
-import {TAnime} from '../types';
+import { TAnime } from '../types';
 
 type TActionToggle = {
   type: 'TOGGLE';

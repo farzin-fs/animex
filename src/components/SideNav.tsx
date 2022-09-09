@@ -9,12 +9,12 @@ const Container = styled.View`
   min-width: 300px;
   max-width: 400px;
   padding: 16px;
-  background-color: ${({theme}) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
-const Button = styled.TouchableOpacity<{active: boolean}>`
+const Button = styled.TouchableOpacity<{ active: boolean }>`
   flex-direction: row;
-  background-color: ${({theme, active}) =>
+  background-color: ${({ theme, active }) =>
     active ? theme.colors.secondary : theme.colors.primary};
   padding: 8px;
   border-radius: 4px;
@@ -26,7 +26,7 @@ type TProps = {
   onChange: (index: number) => void;
 };
 
-const SideNav: React.FC<TProps> = ({currentTab, onChange}) => (
+const SideNav: React.FC<TProps> = ({ currentTab, onChange }) => (
   <Container>
     <Button active={currentTab === 0} onPress={() => onChange(0)}>
       <IconButton name="list-outline" />

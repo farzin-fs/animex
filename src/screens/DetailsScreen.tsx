@@ -1,6 +1,6 @@
-import {useNavigation, useRoute} from '@react-navigation/native';
-import React, {useEffect} from 'react';
-import {ScrollView} from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import React, { useEffect } from 'react';
+import { ScrollView } from 'react-native';
 import {
   AnimeDetails,
   EmptyState,
@@ -8,13 +8,15 @@ import {
   LoadingIndicator,
   Screen,
 } from '../components';
-import {useFetchAnimeByID} from '../hooks';
-import {TNativeStackScreenProps} from '../types';
+import { useFetchAnimeByID } from '../hooks';
+import { TNativeStackScreenProps } from '../types';
 
 const DetailsScreen: React.FC = () => {
   const navigation = useNavigation();
   const route = useRoute<TNativeStackScreenProps<'listing_details'>['route']>();
-  const {isLoading, error, data, request} = useFetchAnimeByID(route.params.id);
+  const { isLoading, error, data, request } = useFetchAnimeByID(
+    route.params.id,
+  );
 
   useEffect(() => {
     request();

@@ -5,7 +5,7 @@ type TProps = {
 };
 
 const Screen = styled.View<TProps>`
-  background-color: ${({theme, primary}) =>
+  background-color: ${({ theme, primary }) =>
     primary ? theme.colors.primary : theme.colors.secondary};
   flex: 1;
 `;

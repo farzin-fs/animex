@@ -3,10 +3,10 @@ import {
   DefaultTheme,
   NavigationContainer,
 } from '@react-navigation/native';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/native';
-import {Divider, SideNav} from '../components';
-import {useDarkMode} from '../hooks';
+import { Divider, SideNav } from '../components';
+import { useDarkMode } from '../hooks';
 import FavoritesStackNavigator from './FavoritesStackNavigator';
 import ListingStackNavigator from './ListingStackNavigator';
 

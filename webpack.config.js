@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const appDirectory = path.resolve(__dirname);
-const {presets} = require(`${appDirectory}/babel.config.js`);
+const { presets } = require(`${appDirectory}/babel.config.js`);
 
 const compileNodeModules = [
   'react-native-gesture-handler',
@@ -74,11 +74,11 @@ module.exports = {
       template: path.join(__dirname, 'web/index.html'),
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.EnvironmentPlugin({JEST_WORKER_ID: null}),
+    new webpack.EnvironmentPlugin({ JEST_WORKER_ID: null }),
     new webpack.DefinePlugin({
       // See: https://github.com/necolas/react-native-web/issues/349
       __DEV__: JSON.stringify(true),
-      process: {env: {}},
+      process: { env: {} },
     }),
   ],
 };

@@ -6,8 +6,8 @@ import {
   StyleSheet,
   useWindowDimensions,
 } from 'react-native';
-import {useTheme} from 'styled-components/native';
-import {TAnime} from '../types';
+import { useTheme } from 'styled-components/native';
+import { TAnime } from '../types';
 import AnimeCard from './AnimeCard';
 import Divider from './Divider';
 import EmptyState from './EmptyState';
@@ -25,21 +25,21 @@ const AnimeList: React.FC<TProps> = ({
   isLoading,
   onLoadMore,
 }) => {
-  const {colors} = useTheme();
+  const { colors } = useTheme();
   const window = useWindowDimensions();
 
   return (
     <FlatList
       data={data}
       keyExtractor={item => item.mal_id.toString()}
-      renderItem={({item}) => (
+      renderItem={({ item }) => (
         <AnimeCard data={item} onPress={() => onPress?.(item)} />
       )}
       ItemSeparatorComponent={() => <Divider size={'90%'} />}
       style={
         Platform.OS === 'web'
           ? {}
-          : {width: window.width, height: window.height}
+          : { width: window.width, height: window.height }
       }
       contentContainerStyle={styles.container}
       ListEmptyComponent={() => (

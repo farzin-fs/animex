@@ -5,7 +5,7 @@ type TProps = {
 };
 
 const Spacer = styled.View<TProps>`
-  margin: ${({size}) => size || 4}px;
+  margin: ${({ size }) => size || 4}px;
 `;
 
 export default Spacer;

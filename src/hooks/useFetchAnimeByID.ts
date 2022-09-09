@@ -1,4 +1,4 @@
-import {TAnime} from '../types';
+import { TAnime } from '../types';
 import useFetch from './useFetch';
 
 type TResponse = {

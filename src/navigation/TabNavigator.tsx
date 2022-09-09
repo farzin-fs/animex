@@ -1,8 +1,8 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {useTheme} from 'styled-components/native';
-import {IconButton} from '../components';
-import {ListingScreen} from '../screens';
+import { useTheme } from 'styled-components/native';
+import { IconButton } from '../components';
+import { ListingScreen } from '../screens';
 
 export type TTabNavigatorParams = {
   airing: undefined;
@@ -13,16 +13,16 @@ export type TTabNavigatorParams = {
 const Tab = createBottomTabNavigator<TTabNavigatorParams>();
 
 const TabNavigator: React.FC = () => {
-  const {colors} = useTheme();
+  const { colors } = useTheme();
 
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="airing"
         component={ListingScreen}
         options={{
           tabBarLabel: 'Airing',
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <IconButton
               name="tv-outline"
               color={focused ? colors.accent : colors.textSecondary}
@@ -35,7 +35,7 @@ const TabNavigator: React.FC = () => {
         component={ListingScreen}
         options={{
           tabBarLabel: 'Complete',
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <IconButton
               name="checkmark-done-outline"
               color={focused ? colors.accent : colors.textSecondary}
@@ -48,7 +48,7 @@ const TabNavigator: React.FC = () => {
         component={ListingScreen}
         options={{
           tabBarLabel: 'Upcoming',
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <IconButton
               name="flame-outline"
               color={focused ? colors.accent : colors.textSecondary}

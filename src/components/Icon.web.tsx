@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 import React from 'react';
-import {ColorValue} from 'react-native';
+import { ColorValue } from 'react-native';
 
 type TProps = {
   name: string;
@@ -9,7 +9,7 @@ type TProps = {
   color: ColorValue;
 };
 
-const Icon: React.FC<TProps> = ({name, size, color}) => (
+const Icon: React.FC<TProps> = ({ name, size, color }) => (
   <>
     <ion-icon name={name} />
     <style type="text/css">

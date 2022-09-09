@@ -1,19 +1,19 @@
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {RouteProp} from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { RouteProp } from '@react-navigation/native';
 import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import React from 'react';
-import {Platform} from 'react-native';
-import {IconButton} from '../components';
-import {DetailsScreen, FavoritesScreen} from '../screens';
-import {TRootNavigatorParams} from '../types';
-import {TDrawerNavigatorParams} from './DrawerNavigator';
+import { Platform } from 'react-native';
+import { IconButton } from '../components';
+import { DetailsScreen, FavoritesScreen } from '../screens';
+import { TRootNavigatorParams } from '../types';
+import { TDrawerNavigatorParams } from './DrawerNavigator';
 
 export type TFavoritesStackNavigatorParams = {
   favorites_list: undefined;
-  favorites_details: {id: number};
+  favorites_details: { id: number };
 };
 
 const Stack = createNativeStackNavigator<TFavoritesStackNavigatorParams>();

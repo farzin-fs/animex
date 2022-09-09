@@ -1,4 +1,4 @@
-import {useCallback, useState} from 'react';
+import { useCallback, useState } from 'react';
 
 const useFetch = <T>(url: string) => {
   const [isLoading, setIsLoading] = useState(false);

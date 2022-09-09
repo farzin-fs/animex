@@ -6,9 +6,9 @@ type TProps = {
 };
 
 const TextSecondary = styled.Text<TProps>`
-  color: ${({theme}) => theme.colors.textSecondary};
-  font-size: ${({size}) => (size ? `${size}px` : '14px')};
-  font-weight: ${({bold}) => (bold ? 'bold' : 'normal')};
+  color: ${({ theme }) => theme.colors.textSecondary};
+  font-size: ${({ size }) => (size ? `${size}px` : '14px')};
+  font-weight: ${({ bold }) => (bold ? 'bold' : 'normal')};
 `;
 
 export default TextSecondary;

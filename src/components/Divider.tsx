@@ -6,9 +6,9 @@ type TProps = {
 };
 
 const Divider = styled.View<TProps>`
-  width: ${({size, vertical}) => (vertical ? '1px' : size || '100%')};
-  height: ${({size, vertical}) => (!vertical ? '1px' : size || '100%')};
-  background-color: ${({theme}) => theme.colors.border};
+  width: ${({ size, vertical }) => (vertical ? '1px' : size || '100%')};
+  height: ${({ size, vertical }) => (!vertical ? '1px' : size || '100%')};
+  background-color: ${({ theme }) => theme.colors.border};
   align-self: center;
 `;
 
