@@ -1,7 +1,7 @@
 import React from 'react';
 import {ColorValue, TouchableOpacity} from 'react-native';
 import {useTheme} from 'styled-components/native';
-import Icon from './Icon.web';
+import Icon from './Icon';
 
 type TProps = {
   name: string;
