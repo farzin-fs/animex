@@ -27,13 +27,19 @@ const AnimeList: React.FC<TProps> = ({
 }) => {
   const { colors } = useTheme();
   const window = useWindowDimensions();
+  const columns = window.width <= 900 ? 1 : window.width <= 1300 ? 2 : 3;
 
   return (
     <FlatList
+      key={columns}
       data={data}
       keyExtractor={item => item.mal_id.toString()}
       renderItem={({ item }) => (
-        <AnimeCard data={item} onPress={() => onPress?.(item)} />
+        <AnimeCard
+          data={item}
+          onPress={() => onPress?.(item)}
+          flex={columns !== 1 ? 1 : undefined}
+        />
       )}
       ItemSeparatorComponent={() => <Divider size={'90%'} />}
       style={
@@ -50,6 +56,7 @@ const AnimeList: React.FC<TProps> = ({
       }
       onEndReached={onLoadMore}
       onEndReachedThreshold={0.1}
+      numColumns={columns}
     />
   );
 };

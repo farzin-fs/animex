@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import {
-  NativeSyntheticEvent,
-  TextInput,
-  TextInputSubmitEditingEventData,
-  View,
-} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { TextInput, View } from 'react-native';
+import { useTheme } from 'styled-components/native';
+import { useDebounce } from '../hooks';
 import styled from '../themes';
 import IconButton from './IconButton';
 import Spacer from './Spacer';
@@ -23,7 +20,7 @@ const Input = styled(TextInput)`
   height: 32px;
   background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 8px;
-  padding: 4px;
+  padding: 4px 12px;
   color: ${({ theme }) => theme.colors.textPrimary};
 `;
 
@@ -32,20 +29,27 @@ type TProps = {
 };
 
 const SearchBar: React.FC<TProps> = ({ onSubmit }) => {
+  const { colors } = useTheme();
   const [value, setValue] = useState('');
+  const debouncedValue = useDebounce(value);
+
+  useEffect(() => {
+    onSubmit(debouncedValue);
+  }, [debouncedValue, onSubmit]);
 
   return (
     <Container>
       <Input
         placeholder="Search"
         onChangeText={(text: string) => setValue(text)}
-        onSubmitEditing={(
-          event: NativeSyntheticEvent<TextInputSubmitEditingEventData>,
-        ) => onSubmit(event.nativeEvent.text)}
         blurOnSubmit={false}
+        returnKeyType={'search'}
+        placeholderTextColor={colors.textSecondary}
+        underlineColorAndroid={colors.accent}
+        selectionColor={colors.accent}
       />
       <Spacer />
-      <IconButton name="search-outline" onPress={() => onSubmit(value)} />
+      <IconButton name="search-outline" />
     </Container>
   );
 };

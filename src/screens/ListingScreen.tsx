@@ -1,5 +1,5 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   AnimeList,
   EmptyState,
@@ -32,37 +32,39 @@ const ListingScreen = () => {
     }
   }, [data, isLoading]);
 
-  const handleSearch = (value: string) => {
+  const handleSearch = useCallback((value: string) => {
     setList(undefined);
     setPage(1);
-    setQuery(value);
-  };
+    setQuery(value || '');
+  }, []);
 
   return (
     <Screen>
-      <SearchBar onSubmit={handleSearch} />
-      {isLoading && !list && <LoadingIndicator />}
-      {error && !list && !isLoading && (
-        <EmptyState
-          title={'whoopsie!'}
-          message={'Something went wrong, Please try again.'}
-          onRetry={request}
-        />
-      )}
-      {list && (
-        <AnimeList
-          data={list}
-          onPress={anime =>
-            navigation.navigate('listing_details', { id: anime.mal_id })
-          }
-          isLoading={isLoading}
-          onLoadMore={() => {
-            if (!isLoading) {
-              setPage(old => old + 1);
+      <>
+        <SearchBar onSubmit={handleSearch} />
+        {isLoading && !list && <LoadingIndicator />}
+        {error && !list && !isLoading && (
+          <EmptyState
+            title={'whoopsie!'}
+            message={'Something went wrong, Please try again.'}
+            onRetry={request}
+          />
+        )}
+        {list && (
+          <AnimeList
+            data={list}
+            onPress={anime =>
+              navigation.navigate('listing_details', { id: anime.mal_id })
             }
-          }}
-        />
-      )}
+            isLoading={isLoading}
+            onLoadMore={() => {
+              if (!isLoading) {
+                setPage(old => old + 1);
+              }
+            }}
+          />
+        )}
+      </>
     </Screen>
   );
 };

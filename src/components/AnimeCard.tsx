@@ -5,7 +5,9 @@ import { TAnime } from '../types';
 import TextPrimary from './TextPrimary';
 import TextSecondary from './TextSecondary';
 
-const Container = styled(TouchableOpacity)`
+const Container = styled(TouchableOpacity)<Pick<TProps, 'flex'>>`
+  ${({ flex }) => (flex === 1 ? 'flex: 1' : '')};
+  width: 100%;
   flex-direction: row;
   padding: 12px;
 `;
@@ -24,10 +26,11 @@ const Cover = styled(Image)`
 type TProps = {
   data: TAnime;
   onPress: () => void;
+  flex?: number;
 };
 
-const AnimeCard: React.FC<TProps> = ({ data, onPress }) => (
-  <Container onPress={onPress}>
+const AnimeCard: React.FC<TProps> = ({ data, onPress, flex }) => (
+  <Container onPress={onPress} flex={flex}>
     <Cover source={{ uri: data.images.jpg.image_url }} />
     <DetailsContainer>
       <TextPrimary>{data.title}</TextPrimary>

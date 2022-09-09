@@ -9,6 +9,7 @@ declare module 'styled-components/native' {
       textPrimary: string;
       textSecondary: string;
       accent: string;
+      accentWithAlpha: string;
     };
   }
 }

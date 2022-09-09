@@ -9,6 +9,7 @@ export { default as FaveIconButton } from './FaveIconButton';
 export { default as Icon } from './Icon';
 export { default as IconButton } from './IconButton';
 export { default as LoadingIndicator } from './LoadingIndicator';
+export { default as NavIconButton } from './NavIconButton';
 export { default as Screen } from './Screen';
 export { default as SearchBar } from './SearchBar';
 export { default as SideNav } from './SideNav';

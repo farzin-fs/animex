@@ -1,9 +1,9 @@
 import { View } from 'react-native';
 import styled from '../themes';
 
-type TProps = {
+type TProps = React.PropsWithChildren<{
   primary?: boolean;
-};
+}>;
 
 const Screen = styled(View)<TProps>`
   background-color: ${({ theme, primary }) =>

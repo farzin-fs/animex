@@ -8,6 +8,7 @@ const lightTheme: DefaultTheme = {
     textPrimary: '#000000',
     textSecondary: '#9d9d9d',
     accent: '#007bff',
+    accentWithAlpha: '#007bff20',
   },
 };
 

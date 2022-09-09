@@ -16,7 +16,7 @@ const TabNavigator: React.FC = () => {
   const { colors } = useTheme();
 
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator screenOptions={{ headerShown: false, title: 'AnimeX' }}>
       <Tab.Screen
         name="airing"
         component={ListingScreen}

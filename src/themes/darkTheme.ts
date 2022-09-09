@@ -8,6 +8,7 @@ const darkTheme: DefaultTheme = {
     textPrimary: '#ffffff',
     textSecondary: '#9d9d9d',
     accent: '#007bff',
+    accentWithAlpha: '#007bff20',
   },
 };
 

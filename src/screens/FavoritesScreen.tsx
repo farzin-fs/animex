@@ -3,7 +3,7 @@ import React from 'react';
 import { AnimeList, Screen } from '../components';
 import { useStore } from '../hooks';
 
-const FavoritesScreen = () => {
+const FavoritesScreen: React.FC = () => {
   const store = useStore();
   const navigation = useNavigation();
 
