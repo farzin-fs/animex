@@ -45,7 +45,6 @@ const SearchBar: React.FC<TProps> = ({ onSubmit }) => {
         blurOnSubmit={false}
         returnKeyType={'search'}
         placeholderTextColor={colors.textSecondary}
-        underlineColorAndroid={colors.accent}
         selectionColor={colors.accent}
       />
       <Spacer />
