@@ -25,17 +25,17 @@ const Input = styled(TextInput)`
 `;
 
 type TProps = {
-  onSubmit: (value: string) => void;
+  onChange: (value: string) => void;
 };
 
-const SearchBar: React.FC<TProps> = ({ onSubmit }) => {
+const SearchBar: React.FC<TProps> = ({ onChange }) => {
   const { colors } = useTheme();
   const [value, setValue] = useState('');
   const debouncedValue = useDebounce(value);
 
   useEffect(() => {
-    onSubmit(debouncedValue);
-  }, [debouncedValue, onSubmit]);
+    onChange(debouncedValue);
+  }, [debouncedValue, onChange]);
 
   return (
     <Container>

@@ -41,7 +41,7 @@ const ListingScreen = () => {
   return (
     <Screen>
       <>
-        <SearchBar onSubmit={handleSearch} />
+        <SearchBar onChange={handleSearch} />
         {isLoading && !list && <LoadingIndicator />}
         {error && !list && !isLoading && (
           <EmptyState

@@ -9,7 +9,8 @@
     "web-build": "rm -rf dist/ && webpack --mode=production --config webpack.config.js",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.10",

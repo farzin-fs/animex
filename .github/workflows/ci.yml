@@ -21,6 +21,18 @@ jobs:
         run: |
           yarn install
 
+      - name: Run lint check
+        run: |
+          yarn lint
+
+      - name: Run TypeScript check
+        run: |
+          yarn tsc
+
+      - name: Run tests
+        run: |
+          yarn test
+
       - name: Cache Gradle Wrapper
         uses: actions/cache@v2
         with:
