@@ -7,7 +7,7 @@ on:
 
 jobs:
   distribution:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     name: Distribution
     steps:
       - run: echo "VERSION=v$(date +'%Y.%m.%d')_${{ github.run_id }}" >> $GITHUB_ENV
