@@ -3,7 +3,7 @@ name: Distribution
 on:
   push:
     branches:
-      - test
+      - main
 
 jobs:
   distribution:
@@ -21,13 +21,13 @@ jobs:
         run: |
           yarn install
 
-      - name: Install Pod Dependencies
-        run: cd ./ios && pod install && cd ..
+      # - name: Install Pod Dependencies
+      #   run: cd ./ios && pod install && cd ..
 
-      - name: Install Detox Dependencies
-        run: |
-          brew tap wix/brew
-          brew install applesimutils
+      # - name: Install Detox Dependencies
+      #   run: |
+      #     brew tap wix/brew
+      #     brew install applesimutils
 
       - name: Run lint check
         run: |
@@ -37,11 +37,11 @@ jobs:
         run: |
           yarn tsc
 
-      - name: Run Detox Build
-        run: yarn test:e2e:build
+      # - name: Run Detox Build
+      #   run: yarn test:e2e:build
 
-      - name: Run Detox Test(s)
-        run: bash ${{ github.workspace }}/scripts/run-e2e-ios-debug.sh
+      # - name: Run Detox Test(s)
+      #   run: bash ${{ github.workspace }}/scripts/run-e2e-ios-debug.sh
 
       - name: Cache Gradle Wrapper
         uses: actions/cache@v2
