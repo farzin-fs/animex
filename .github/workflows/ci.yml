@@ -3,11 +3,11 @@ name: Distribution
 on:
   push:
     branches:
-      - main
+      - test
 
 jobs:
   distribution:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     name: Distribution
     steps:
       - run: echo "VERSION=v$(date +'%Y.%m.%d')_${{ github.run_id }}" >> $GITHUB_ENV
@@ -28,6 +28,11 @@ jobs:
       - name: Run TypeScript check
         run: |
           yarn tsc
+
+      - name: Run e2e test
+        run: |
+          yarn test:e2e:build
+          yarn test:e2e
 
       - name: Cache Gradle Wrapper
         uses: actions/cache@v2
