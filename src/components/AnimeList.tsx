@@ -36,6 +36,7 @@ const AnimeList: React.FC<TProps> = ({
       keyExtractor={item => item.mal_id.toString()}
       renderItem={({ item }) => (
         <AnimeCard
+          testID={item.title}
           data={item}
           onPress={() => onPress?.(item)}
           flex={columns !== 1 ? 1 : undefined}

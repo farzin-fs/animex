@@ -8,8 +8,8 @@
     "ios": "react-native run-ios",
     "web": "webpack serve --mode=development --config webpack.config.js",
     "web:build": "rm -rf dist/ && webpack --mode=production --config webpack.config.js",
-    "test:e2e:build": "detox build -c ios",
     "test:e2e": "detox test -c ios",
+    "test:e2e:build": "detox build -c ios",
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "tsc": "tsc"
   },

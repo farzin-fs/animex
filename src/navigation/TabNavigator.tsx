@@ -22,6 +22,7 @@ const TabNavigator: React.FC = () => {
         component={ListingScreen}
         options={{
           tabBarLabel: 'Airing',
+          tabBarTestID: 'tab-airing',
           tabBarIcon: ({ focused }) => (
             <IconButton
               name="tv-outline"
@@ -35,6 +36,7 @@ const TabNavigator: React.FC = () => {
         component={ListingScreen}
         options={{
           tabBarLabel: 'Complete',
+          tabBarTestID: 'tab-complete',
           tabBarIcon: ({ focused }) => (
             <IconButton
               name="checkmark-done-outline"
@@ -48,6 +50,7 @@ const TabNavigator: React.FC = () => {
         component={ListingScreen}
         options={{
           tabBarLabel: 'Upcoming',
+          tabBarTestID: 'tab-upcoming',
           tabBarIcon: ({ focused }) => (
             <IconButton
               name="flame-outline"

@@ -20,6 +20,7 @@ const FaveIconButton: React.FC<TProps> = ({ data }) => {
   return (
     <Container>
       <IconButton
+        testID="nav-fav"
         name={isFavorite ? 'heart' : 'heart-outline'}
         onPress={toggle}
         color="red"

@@ -40,6 +40,7 @@ const SearchBar: React.FC<TProps> = ({ onChange }) => {
   return (
     <Container>
       <Input
+        testID="input-search"
         placeholder="Search"
         onChangeText={(text: string) => setValue(text)}
         blurOnSubmit={false}

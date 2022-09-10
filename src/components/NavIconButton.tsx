@@ -34,7 +34,11 @@ const NavIconButton: React.FC<TProps> = ({ route }) => {
   if (navigation.canGoBack()) {
     return (
       <Container>
-        <IconButton name="chevron-back-outline" onPress={navigation.goBack} />
+        <IconButton
+          testID="nav-back"
+          name="chevron-back-outline"
+          onPress={navigation.goBack}
+        />
       </Container>
     );
   }
