@@ -29,10 +29,6 @@ jobs:
         run: |
           yarn tsc
 
-      - name: Run tests
-        run: |
-          yarn test
-
       - name: Cache Gradle Wrapper
         uses: actions/cache@v2
         with:

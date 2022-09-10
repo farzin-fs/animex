@@ -1,0 +1,26 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 13"
+      }
+    }
+  },
+  "apps": {
+    "ios.debug": {
+      "name": "animex",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/animex.app",
+      "build": "xcodebuild -workspace ios/animex.xcworkspace -scheme animex -sdk iphonesimulator -derivedDataPath ios/build"
+    }
+  },
+  "configurations": {
+    "ios": {
+      "device": "simulator",
+      "app": "ios.debug"
+    }
+  }
+}
