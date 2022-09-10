@@ -22,13 +22,23 @@ const NavIconButton: React.FC<TProps> = ({ route }) => {
     (route === 'listing_tabs' || route === 'favorites_list') &&
     Platform.OS !== 'web'
   ) {
-    return <IconButton name="menu-outline" onPress={navigation.toggleDrawer} />;
+    return (
+      <IconButton
+        testID="nav-menu"
+        name="menu-outline"
+        onPress={navigation.toggleDrawer}
+      />
+    );
   }
 
   if (navigation.canGoBack()) {
     return (
       <Container>
-        <IconButton name="chevron-back-outline" onPress={navigation.goBack} />
+        <IconButton
+          testID="nav-back"
+          name="chevron-back-outline"
+          onPress={navigation.goBack}
+        />
       </Container>
     );
   }

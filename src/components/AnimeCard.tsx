@@ -27,10 +27,11 @@ type TProps = {
   data: TAnime;
   onPress: () => void;
   flex?: number;
+  testID?: string;
 };
 
-const AnimeCard: React.FC<TProps> = ({ data, onPress, flex }) => (
-  <Container onPress={onPress} flex={flex}>
+const AnimeCard: React.FC<TProps> = ({ data, onPress, flex, testID }) => (
+  <Container testID={testID} onPress={onPress} flex={flex}>
     <Cover source={{ uri: data.images.jpg.image_url }} />
     <DetailsContainer>
       <TextPrimary>{data.title}</TextPrimary>
