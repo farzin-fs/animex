@@ -1,6 +1,6 @@
 # AnimeX
 
-https://user-images.githubusercontent.com/72082844/189202172-9f0e4683-07f7-433c-ab00-bdebf9fb7d27.mov
+https://user-images.githubusercontent.com/72082844/189478209-0dcc46b2-307e-47ca-95b5-6dd0e8bdc075.mov
 
 A cross-platform anime catalog application that allows users to browse and search anime and mark them as favorite.
 
@@ -22,4 +22,11 @@ yarn
 yarn android
 yarn ios
 yarn web
+```
+
+### Run e2e test (iOS only)
+
+```sh
+yarn test:e2e:build
+yarn test:e2e
 ```
